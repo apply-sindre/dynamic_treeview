@@ -300,6 +300,14 @@ class _ParentWidgetState extends State<ParentWidget>
             if (widget.onTap != null) {
               widget.onTap!(map);
             }
+            setState(() {
+              shouldExpand = !shouldExpand;
+            });
+            if (shouldExpand) {
+              expandController.forward();
+            } else {
+              expandController.reverse();
+            }
           },
           title: Text(widget.baseData.getTitle(),
               style: widget.config.parentTextStyle),
