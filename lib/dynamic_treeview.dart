@@ -56,6 +56,12 @@ class _DynamicTreeViewOriState extends State<DynamicTreeView> {
     super.initState();
   }
 
+  @override
+  void didUpdateWidget(DynamicTreeView oldWidget) {
+    _buildTreeView();
+    super.didUpdateWidget(oldWidget);
+  }
+
   _buildTreeView() {
     var k = widget.data
         .where((data) {
